@@ -1,10 +1,11 @@
 #source file search paths
-VPATH = ./src 
+VPATH = ./src ../PathFinder/src 
 
 	# compiler include search paths
 INCS = -I./include \
 	-I../windex/include \
 	-I../raven-set \
+	-I../PathFinder/src \
 
 LIBS = \
 	-lgdiplus -lgdi32 -lcomdlg32 -lstdc++fs \
@@ -20,11 +21,13 @@ CCflags = -std=c++17 $(OPT) -D_mingw_
 
 # sources
 OBJ_starter = \
-	$(ODIR)/main.o 
+	$(ODIR)/main.o \
+	$(ODIR)/cSchematic.o \
+	$(ODIR)/cGraph.o \
 
 ### COMPILE
 
-$(ODIR)/%.o: %.cpp  
+$(ODIR)/%.o: %.cpp  cSchematic.h
 	g++ $< \
 	-c -o $@  $(INCS) $(CCflags)
 
