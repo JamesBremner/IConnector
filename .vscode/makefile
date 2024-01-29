@@ -23,11 +23,12 @@ CCflags = -std=c++17 $(OPT) -D_mingw_
 OBJ_starter = \
 	$(ODIR)/main.o \
 	$(ODIR)/cSchematic.o \
+	$(ODIR)/cPCB.o \
 	$(ODIR)/cGraph.o \
 
 ### COMPILE
 
-$(ODIR)/%.o: %.cpp  cSchematic.h
+$(ODIR)/%.o: %.cpp  cSchematic.h cPCB.h
 	g++ $< \
 	-c -o $@  $(INCS) $(CCflags)
 

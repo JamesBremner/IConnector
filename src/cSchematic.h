@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -6,6 +7,7 @@
 #include <algorithm>
 
 #include "cGraph.h"
+#include "cxy.h"
 
 enum class eGateType
 {
